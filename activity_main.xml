@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#FFFF00">
+
+    <TextView
+
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cake Ordering"
+        android:textSize="23dp"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/calimg"/>
+
+    <ImageView
+        android:id="@+id/calimg"
+        android:layout_width="131dp"
+        android:layout_height="112dp"
+        app:srcCompat="@drawable/cal"
+        android:onClick="selectDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/timeimg"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/spinners"/>
+
+    <ImageView
+        android:id="@+id/timeimg"
+        android:layout_width="130dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/time"
+        android:onClick="selectTime"
+        app:layout_constraintStart_toEndOf="@id/calimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/spinners"/>
+
+    <Spinner
+        android:id="@+id/spinners"
+        android:layout_width="417dp"
+        android:layout_height="49dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calimg"
+        app:layout_constraintBottom_toTopOf="@id/btns"
+         />
+
+    <Button
+        android:id="@+id/btns"
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:text="Place Order"
+        android:onClick="PlaceOrder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinners" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
